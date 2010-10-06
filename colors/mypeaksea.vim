@@ -557,7 +557,7 @@ elseif &background=='dark'
       hi TabLineSel	ctermfg=fg	ctermbg=NONE	cterm=NONE
       hi CursorColumn	ctermfg=NONE	ctermbg=88	cterm=NONE
       " Modifying cursor line
-      " hi Normal           ctermfg=252     ctermbg=234     cterm=NONE
+      hi Normal           ctermfg=252     ctermbg=234     cterm=NONE
       hi CursorLine	ctermfg=252	ctermbg=235 cterm=NONE
       hi MatchParen	ctermfg=NONE	ctermbg=90
       hi TabLine	cterm=underline  

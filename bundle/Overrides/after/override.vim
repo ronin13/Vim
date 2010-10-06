@@ -1,3 +1,4 @@
-nnoremap p ]p
-nnoremap P [P
-":set updatetime=40000
+"nnoremap p ]p
+"nnoremap P [P
+
+"map <S-Insert> <Nop>

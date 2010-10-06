@@ -15,7 +15,7 @@
 
 set pastetoggle=<f12>   " toggle mouse paste mode with F12
 set ft=mail             " needless to say, vim had already guessed that alone :)
-
+set spell
 
 
 "" ----------------------------------------------------------------------------
@@ -146,7 +146,38 @@ call Mail_Begining()
 "http://permalink.gmane.org/gmane.editors.vim.devel/20890
 setlocal foldmethod=expr foldlevel=1 foldminlines=2
 setlocal foldexpr=strlen(substitute(substitute(getline(v:lnum),'\\s','','g'),'[^>].*','',''))
-":! lbdbq | awk '{ print  }' > /tmp/lbdict
+
+fun! LBDBCompleteFn(findstart, base)
+    if a:findstart
+        " locate the start of the word
+        let line = getline('.')
+        let start = col('.') - 1
+        while start > 0 && line[start - 1] =~ '[^:,]'
+            let start -= 1
+        endwhile
+        while start < col('.') && line[start] =~ '[:, ]'
+            let start += 1
+        endwhile
+        return start
+    else
+        let res = []
+        let query = substitute(a:base, '"', '', 'g')
+        let query = substitute(query, '\s*<.*>\s*', '', 'g')
+        for m in LbdbQuery(query)
+            call add(res, printf('"%s" <%s>', escape(m[0], '"'), m[1]))
+        endfor
+        return res
+    endif
+endfun
+
+set completefunc=LBDBCompleteFn
+ino <C-n> <C-X><C-U>
+ino <C-p> <C-X><C-U>
+
+
+" To be done elsewhere
+" http://dollyfish.net.nz/blog/2008-04-01/mutt-and-vim-custom-autocompletion
+":silent! lbdbq | awk '{ print  }' > /tmp/lbdict
 "setlocal dictionary+=/tmp/lbdict
 "silent! %s/\(^\([a-zA-z-]\+:\|--\)\)\@<!\s\+$//
 "silent! %s/^\(>\+\) >/\1>/g
