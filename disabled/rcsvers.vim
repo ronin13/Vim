@@ -1185,7 +1185,7 @@ function! s:CompareFiles(revision)
     if (l:cmdopts == "error")
         return
     endif
-    let l:cmd = "co -p -r".a:revision.l:cmdopts
+    let l:cmd = "set -x; pwd;co -p -r".a:revision.l:cmdopts
 
     " Create a new buffer to place the co output
     let l:tmpfile = tempname()."_".expand("%:p:t").".".a:revision
@@ -1214,7 +1214,7 @@ function! s:CompareFiles(revision)
     "change dir to the original file dir, in case they auto change dir
     "when opening files
     exec "cd ".g:rvFileQuote.l:savedir.g:rvFileQuote
-
+    exe "0r! pwd"
     " Run the co command and capture the output
     sil exe "sil! 0r!".l:cmd
     :$delete
