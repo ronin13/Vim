@@ -505,7 +505,8 @@ elseif &background=='dark'
     hi Cursor		ctermfg=16	ctermbg=46	cterm=NONE
     " NOTE THIS IS IN THE COOL SECTION
     "hi CursorIM	ctermfg=16	ctermbg=201	cterm=NONE
-    hi StatusLine	ctermfg=16	ctermbg=153	cterm=NONE
+    hi StatusLine	ctermfg=41	ctermbg=233	cterm=NONE
+    hi ActiveTab        ctermfg=45      ctermbg=236     cterm=NONE
     hi LineNr		ctermfg=249	ctermbg=NONE	cterm=NONE
     hi Question		ctermfg=16	ctermbg=186	cterm=NONE
     hi ModeMsg		ctermfg=fg	ctermbg=18	cterm=NONE

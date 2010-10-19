@@ -22,9 +22,9 @@
 [submodule "bundle/nerdcommenter"]
 	path = bundle/nerdcommenter
 	url = http://github.com/scrooloose/nerdcommenter.git
-[submodule "bundle/tslime"]
-	path = bundle/tslime
-	url = http://github.com/kikijump/tslime.vim.git
 [submodule "bundle/vim-indent-object"]
 	path = bundle/vim-indent-object
 	url = http://github.com/michaeljsmith/vim-indent-object.git
+[submodule "bundle/gundo"]
+	path = bundle/gundo
+	url = git://github.com/sjl/gundo.vim
