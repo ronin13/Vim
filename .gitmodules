@@ -4,9 +4,6 @@
 [submodule "bundle/supertab"]
 	path = bundle/supertab
 	url = git://github.com/ervandew/supertab.git
-[submodule "bundle/current-func-info"]
-	path = bundle/current-func-info
-	url = git://github.com/fedesilva/current-func-info.vim.git
 [submodule "bundle/vcscommand"]
 	path = bundle/vcscommand
 	url = git://repo.or.cz/vcscommand.git
@@ -28,3 +25,18 @@
 [submodule "bundle/gundo"]
 	path = bundle/gundo
 	url = git://github.com/sjl/gundo.vim
+[submodule "bundle/cute-python"]
+	path = bundle/cute-python
+	url = http://github.com/ehamberg/vim-cute-python.git
+[submodule "bundle/buftabs"]
+	path = bundle/buftabs
+	url = http://github.com/vim-scripts/buftabs.git
+[submodule "bundle/pylint"]
+	path = bundle/pylint
+	url = https://github.com/vim-scripts/pylint.vim.git
+[submodule "bundle/syntastic"]
+	path = bundle/syntastic
+	url = https://github.com/scrooloose/syntastic.git
+[submodule "bundle/clang_complete"]
+	path = bundle/clang_complete
+	url = https://github.com/Rip-Rip/clang_complete.git
