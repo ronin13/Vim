@@ -42,7 +42,7 @@ if &background=='dark' "{{{
     hi Title		ctermfg=219	ctermbg=NONE	cterm=NONE
     hi WarningMsg	ctermfg=209	ctermbg=NONE	cterm=NONE
     hi WildMenu		ctermfg=16	ctermbg=186	cterm=NONE
-    hi Folded		ctermfg=232	ctermbg=31	cterm=NONE
+    hi Folded		ctermfg=44	ctermbg=232	cterm=NONE
     hi FoldColumn	ctermfg=123	ctermbg=238	cterm=NONE
     hi DiffAdd		ctermfg=NONE	ctermbg=18	cterm=NONE
     hi DiffChange	ctermfg=NONE	ctermbg=90	cterm=NONE
@@ -50,25 +50,25 @@ if &background=='dark' "{{{
     hi DiffText		ctermfg=16	ctermbg=150	cterm=NONE
     hi SignColumn	ctermfg=254	ctermbg=28	cterm=NONE
     hi IncSearch	ctermfg=16	ctermbg=252	cterm=NONE
-    hi StatusLineNC	ctermfg=16	ctermbg=250	cterm=NONE
+    hi StatusLineNC	ctermfg=105	ctermbg=250	cterm=NONE
     hi VertSplit	ctermfg=16	ctermbg=250	cterm=NONE
     hi Underlined	ctermfg=111	ctermbg=NONE	cterm=underline 
     hi Ignore		ctermfg=16	ctermbg=NONE
     if v:version >= 700
-      if has('spell')
-        " the ctermsp= is not supported in Vim 7 we simply ignored
-        if 0
-          hi SpellBad	cterm=undercurl	ctermbg=NONE	ctermfg=209
-          hi SpellCap	cterm=undercurl	ctermbg=NONE	ctermfg=69
-          hi SpellRare	cterm=undercurl	ctermbg=NONE	ctermfg=219
-          hi SpellLocal	cterm=undercurl	ctermbg=NONE	ctermfg=153
-        else
-          hi SpellBad	cterm=undercurl	ctermbg=NONE	ctermfg=NONE
-          hi SpellCap	cterm=undercurl	ctermbg=NONE	ctermfg=NONE
-          hi SpellRare	cterm=undercurl	ctermbg=NONE	ctermfg=NONE
-          hi SpellLocal	cterm=undercurl	ctermbg=NONE	ctermfg=NONE
-        endif
-      endif
+      "if has('spell')
+        "" the ctermsp= is not supported in Vim 7 we simply ignored
+        "if 0
+          "hi SpellBad	cterm=undercurl	ctermbg=NONE	ctermfg=209
+          "hi SpellCap	cterm=undercurl	ctermbg=NONE	ctermfg=69
+          "hi SpellRare	cterm=undercurl	ctermbg=NONE	ctermfg=219
+          "hi SpellLocal	cterm=undercurl	ctermbg=NONE	ctermfg=153
+        "else
+          "hi SpellBad	cterm=undercurl	ctermbg=NONE	ctermfg=NONE
+          "hi SpellCap	cterm=undercurl	ctermbg=NONE	ctermfg=NONE
+          "hi SpellRare	cterm=undercurl	ctermbg=NONE	ctermfg=NONE
+          "hi SpellLocal	cterm=undercurl	ctermbg=NONE	ctermfg=NONE
+        "endif
+      "endif
       hi Pmenu		ctermfg=fg	ctermbg=90
       hi PmenuSel	ctermfg=16	ctermbg=252	cterm=NONE
       hi PmenuSbar	ctermfg=fg	ctermbg=18	cterm=NONE
@@ -87,6 +87,12 @@ if &background=='dark' "{{{
       "hi CursorLine	cterm=underline 
     endif
 endif"}}}
+
+hi SpellBad term=reverse ctermfg=white ctermbg=darkred guifg=#ffffff guibg=#7f0000 gui=underline
+hi SpellCap guifg=#ffffff guibg=#7f007f
+hi SpellRare guifg=#ffffff guibg=#00007f gui=underline
+hi SpellLocal term=reverse ctermfg=black ctermbg=darkgreen guifg=#ffffff guibg=#7f0000 gui=underline
+
 
 " Links:
 "
